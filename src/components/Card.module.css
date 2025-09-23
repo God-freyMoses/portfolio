@@ -1,0 +1,162 @@
+/**
+ * Card Component Styles
+ * Example CSS Module demonstrating naming conventions and design system usage
+ */
+
+.card {
+  background: var(--color-gray-50);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-all);
+  border: 1px solid var(--color-gray-200);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-dramatic);
+}
+
+/* Element styles using BEM-like naming */
+.card__header {
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.card__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-tight);
+}
+
+.card__subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-medium);
+}
+
+.card__content {
+  margin-bottom: var(--space-4);
+}
+
+.card__text {
+  color: var(--color-gray-700);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+/* Modifier styles */
+.card--featured {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+}
+
+.card--featured .card__title {
+  color: white;
+}
+
+.card--featured .card__text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card--featured .card__header,
+.card--featured .card__footer {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card--glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.card--compact {
+  padding: var(--space-4);
+}
+
+.card--large {
+  padding: var(--space-8);
+}
+
+/* State styles */
+.card.isLoading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.card.isActive {
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.card.isDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Size variants */
+.card--small .card__title {
+  font-size: var(--text-lg);
+}
+
+.card--small .card {
+  padding: var(--space-4);
+}
+
+.card--large .card__title {
+  font-size: var(--text-3xl);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    padding: var(--space-4);
+  }
+
+  .card__title {
+    font-size: var(--text-xl);
+  }
+
+  .card__footer {
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: stretch;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: var(--color-gray-800);
+    border-color: var(--color-gray-700);
+  }
+
+  .card__title {
+    color: var(--color-gray-100);
+  }
+
+  .card__text {
+    color: var(--color-gray-300);
+  }
+
+  .card__header,
+  .card__footer {
+    border-color: var(--color-gray-700);
+  }
+}

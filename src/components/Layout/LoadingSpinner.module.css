@@ -1,0 +1,272 @@
+/**
+ * Loading Spinner Component Styles
+ * Various loading animations and states
+ */
+
+.loading {
+  display: inline-block;
+}
+
+/* ===== SPINNER VARIANT ===== */
+
+.spinner {
+  border: 2px solid var(--color-gray-200);
+  border-top: 2px solid var(--color-primary-500);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.spinner.sm {
+  width: 16px;
+  height: 16px;
+}
+
+.spinner.md {
+  width: 24px;
+  height: 24px;
+}
+
+.spinner.lg {
+  width: 32px;
+  height: 32px;
+}
+
+.spinner.xl {
+  width: 48px;
+  height: 48px;
+}
+
+/* ===== DOTS VARIANT ===== */
+
+.dots {
+  display: inline-flex;
+  gap: var(--space-1);
+}
+
+.dots span {
+  background: var(--color-primary-500);
+  border-radius: 50%;
+  animation: loadingDots 1.4s ease-in-out infinite both;
+}
+
+.dots.sm span {
+  width: 4px;
+  height: 4px;
+}
+
+.dots.md span {
+  width: 6px;
+  height: 6px;
+}
+
+.dots.lg span {
+  width: 8px;
+  height: 8px;
+}
+
+.dots.xl span {
+  width: 12px;
+  height: 12px;
+}
+
+.dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0s;
+}
+
+/* ===== PULSE VARIANT ===== */
+
+.pulse {
+  background: var(--color-primary-500);
+  border-radius: 50%;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.pulse.sm {
+  width: 16px;
+  height: 16px;
+}
+
+.pulse.md {
+  width: 24px;
+  height: 24px;
+}
+
+.pulse.lg {
+  width: 32px;
+  height: 32px;
+}
+
+.pulse.xl {
+  width: 48px;
+  height: 48px;
+}
+
+/* ===== SKELETON VARIANT ===== */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-gray-200) 25%,
+    var(--color-gray-100) 50%,
+    var(--color-gray-200) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+.skeletonText {
+  height: 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.skeletonRectangular {
+  border-radius: var(--radius-md);
+}
+
+.skeletonCircular {
+  border-radius: 50%;
+}
+
+/* ===== PAGE LOADING ===== */
+
+.pageLoading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-50);
+}
+
+.pageLoadingContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.pageLoadingMessage {
+  font-size: var(--text-lg);
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingDots {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes skeleton {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ===== DARK MODE ===== */
+
+@media (prefers-color-scheme: dark) {
+  .spinner {
+    border-color: var(--color-gray-700);
+    border-top-color: var(--color-primary-400);
+  }
+
+  .dots span {
+    background: var(--color-primary-400);
+  }
+
+  .pulse {
+    background: var(--color-primary-400);
+  }
+
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--color-gray-700) 25%,
+      var(--color-gray-600) 50%,
+      var(--color-gray-700) 75%
+    );
+  }
+
+  .pageLoading {
+    background: rgba(17, 24, 39, 0.9);
+  }
+
+  .pageLoadingMessage {
+    color: var(--color-gray-300);
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner,
+  .dots span,
+  .pulse,
+  .skeleton {
+    animation: none;
+  }
+
+  .spinner {
+    border-top-color: var(--color-primary-500);
+  }
+
+  .dots span {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .pulse {
+    opacity: 1;
+  }
+
+  .skeleton {
+    background: var(--color-gray-200);
+  }
+}

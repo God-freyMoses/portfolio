@@ -1,0 +1,6 @@
+# Content Directory
+
+This directory contains MDX content files for:
+- Projects: `/projects/*.mdx`
+- Blog posts: `/blog/*.mdx` 
+- Certifications: `/certifications/*.mdx`

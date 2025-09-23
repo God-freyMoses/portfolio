@@ -1,0 +1,105 @@
+/**
+ * Section Component Styles
+ * Flexible section layouts with responsive grid system
+ */
+
+.section {
+  position: relative;
+  width: 100%;
+}
+
+/* Variant styles */
+.default {
+  padding: var(--space-16) 0;
+}
+
+.hero {
+  padding: var(--space-24) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.feature {
+  padding: var(--space-20) 0;
+}
+
+.content {
+  padding: var(--space-12) 0;
+}
+
+/* Background variants */
+.bgDefault {
+  background-color: var(--color-gray-50);
+}
+
+.bgAlternate {
+  background-color: var(--color-gray-100);
+}
+
+.bgDark {
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-100);
+}
+
+.bgGradient {
+  background: var(--gradient-mesh);
+}
+
+/* Spacing variants */
+.compact {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+.spacious {
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-32);
+}
+
+/* Full height sections */
+.fullHeight {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.fullHeight .container {
+  width: 100%;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .bgDefault {
+    background-color: var(--color-gray-900);
+    color: var(--color-gray-100);
+  }
+
+  .bgAlternate {
+    background-color: var(--color-gray-800);
+    color: var(--color-gray-100);
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .hero {
+    padding: var(--space-32) 0;
+  }
+
+  .feature {
+    padding: var(--space-24) 0;
+  }
+
+  .spacious {
+    padding-top: var(--space-40);
+    padding-bottom: var(--space-40);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: var(--space-40) 0;
+  }
+}

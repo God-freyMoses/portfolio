@@ -1,0 +1,142 @@
+.socialLinks {
+  margin-top: var(--space-8);
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-700);
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-full);
+  color: var(--color-gray-700);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUp 0.6s ease-out forwards;
+  animation-delay: calc(var(--delay, 0) * 1ms);
+}
+
+.socialLink:hover {
+  background: var(--social-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px
+    color-mix(in srgb, var(--social-color) 30%, transparent);
+  border-color: var(--social-color);
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.socialLink:hover .iconContainer {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.linkText {
+  transition: transform 0.3s ease;
+}
+
+.socialLink:hover .linkText {
+  transform: translateX(2px);
+}
+
+/* Staggered animation */
+.socialLink:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.socialLink:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.socialLink:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.socialLink:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .links {
+    gap: var(--space-3);
+  }
+
+  .socialLink {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+  }
+
+  .iconContainer {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .links {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .socialLink {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .title {
+    color: var(--color-gray-300);
+  }
+
+  .socialLink {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-gray-200);
+  }
+
+  .socialLink:hover {
+    color: white;
+  }
+}

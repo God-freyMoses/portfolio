@@ -1,0 +1,264 @@
+/**
+ * Grid Component Styles
+ * Responsive CSS Grid and Flexbox utilities
+ */
+
+/* ===== GRID LAYOUTS ===== */
+
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+/* Column configurations */
+.columns1 {
+  grid-template-columns: 1fr;
+}
+
+.columns2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.columns3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.columns4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.columns6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.columns12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.columnsAutoFit {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.columnsAutoFill {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* Gap sizes */
+.gapSm {
+  gap: var(--space-4);
+}
+
+.gapMd {
+  gap: var(--space-6);
+}
+
+.gapLg {
+  gap: var(--space-8);
+}
+
+.gapXl {
+  gap: var(--space-12);
+}
+
+/* Alignment */
+.alignStart {
+  align-items: start;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignEnd {
+  align-items: end;
+}
+
+.alignStretch {
+  align-items: stretch;
+}
+
+/* Justification */
+.justifyStart {
+  justify-content: start;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyEnd {
+  justify-content: end;
+}
+
+.justifyBetween {
+  justify-content: space-between;
+}
+
+.justifyAround {
+  justify-content: space-around;
+}
+
+.justifyEvenly {
+  justify-content: space-evenly;
+}
+
+/* Responsive behavior */
+.responsive.columns2 {
+  grid-template-columns: 1fr;
+}
+
+.responsive.columns3 {
+  grid-template-columns: 1fr;
+}
+
+.responsive.columns4 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.responsive.columns6 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.responsive.columns12 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (min-width: 768px) {
+  .responsive.columns2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .responsive.columns3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .responsive.columns4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .responsive.columns6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .responsive.columns12 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive.columns3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .responsive.columns4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .responsive.columns6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .responsive.columns12 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+/* ===== FLEXBOX LAYOUTS ===== */
+
+.flex {
+  display: flex;
+  width: 100%;
+}
+
+/* Direction */
+.directionRow {
+  flex-direction: row;
+}
+
+.directionColumn {
+  flex-direction: column;
+}
+
+.directionRowReverse {
+  flex-direction: row-reverse;
+}
+
+.directionColumnReverse {
+  flex-direction: column-reverse;
+}
+
+/* Wrap */
+.wrapNowrap {
+  flex-wrap: nowrap;
+}
+
+.wrapWrap {
+  flex-wrap: wrap;
+}
+
+.wrapWrapReverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* Flex gap sizes (same as grid) */
+.flex.gapSm {
+  gap: var(--space-4);
+}
+
+.flex.gapMd {
+  gap: var(--space-6);
+}
+
+.flex.gapLg {
+  gap: var(--space-8);
+}
+
+.flex.gapXl {
+  gap: var(--space-12);
+}
+
+/* Flex alignment */
+.flex.alignStart {
+  align-items: flex-start;
+}
+
+.flex.alignCenter {
+  align-items: center;
+}
+
+.flex.alignEnd {
+  align-items: flex-end;
+}
+
+.flex.alignStretch {
+  align-items: stretch;
+}
+
+.flex.alignBaseline {
+  align-items: baseline;
+}
+
+/* Flex justification */
+.flex.justifyStart {
+  justify-content: flex-start;
+}
+
+.flex.justifyCenter {
+  justify-content: center;
+}
+
+.flex.justifyEnd {
+  justify-content: flex-end;
+}
+
+.flex.justifyBetween {
+  justify-content: space-between;
+}
+
+.flex.justifyAround {
+  justify-content: space-around;
+}
+
+.flex.justifyEvenly {
+  justify-content: space-evenly;
+}

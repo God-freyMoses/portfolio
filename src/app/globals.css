@@ -1,0 +1,26 @@
+/**
+ * Global Styles
+ * Main stylesheet that imports the design system components
+ */
+
+/* Import Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Design System */
+@import '../styles/design-tokens.css';
+@import '../styles/base.css';
+@import '../styles/utilities.css';
+
+/* Additional Tailwind customizations */
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+}
+
+/* Custom component overrides can go here */
+@layer components {
+  /* Any additional component styles specific to this project */
+}

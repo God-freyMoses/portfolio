@@ -1,0 +1,160 @@
+/**
+ * Page Transition Component Styles
+ * Smooth page transitions and animations
+ */
+
+.transition {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.content {
+  transition:
+    opacity 0.15s ease-in-out,
+    transform 0.15s ease-in-out;
+}
+
+.loading {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-50);
+  animation: fadeIn 0.15s ease-out;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-gray-200);
+  border-top: 2px solid var(--color-primary-500);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ===== FADE TRANSITION ===== */
+
+.fadeTransition {
+  transition: opacity var(--duration, 300ms) ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+/* ===== SLIDE TRANSITION ===== */
+
+.slideTransition {
+  transition:
+    opacity var(--duration, 300ms) ease-in-out,
+    transform var(--duration, 300ms) ease-in-out;
+}
+
+.slideIn {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.slideOut {
+  opacity: 0;
+}
+
+/* Slide directions */
+.slideUp.slideOut {
+  transform: translateY(20px);
+}
+
+.slideDown.slideOut {
+  transform: translateY(-20px);
+}
+
+.slideLeft.slideOut {
+  transform: translateX(20px);
+}
+
+.slideRight.slideOut {
+  transform: translateX(-20px);
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== DARK MODE ===== */
+
+@media (prefers-color-scheme: dark) {
+  .overlay {
+    background: rgba(17, 24, 39, 0.8);
+  }
+
+  .spinner {
+    border-color: var(--color-gray-700);
+    border-top-color: var(--color-primary-400);
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .content,
+  .fadeTransition,
+  .slideTransition {
+    transition: none;
+  }
+
+  .loading {
+    opacity: 1;
+    transform: none;
+  }
+
+  .overlay {
+    animation: none;
+  }
+
+  .spinner {
+    animation: none;
+    border-top-color: var(--color-primary-500);
+  }
+
+  .slideOut {
+    transform: none;
+  }
+}

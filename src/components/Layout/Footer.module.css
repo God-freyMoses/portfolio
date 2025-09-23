@@ -1,0 +1,142 @@
+/**
+ * Footer Component Styles
+ * Responsive footer with grid layout
+ */
+
+.footer {
+  grid-area: footer;
+  background: var(--color-gray-900);
+  color: var(--color-gray-100);
+  padding: var(--space-16) 0 var(--space-8);
+  margin-top: var(--space-24);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+
+.info {
+  text-align: center;
+}
+
+.name {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-100);
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-lg);
+  color: var(--color-gray-300);
+  margin-bottom: var(--space-4);
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  justify-items: center;
+}
+
+.section {
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-100);
+  margin-bottom: var(--space-4);
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.link {
+  color: var(--color-gray-300);
+  text-decoration: none;
+  font-size: var(--text-base);
+  transition: var(--transition-colors);
+  position: relative;
+}
+
+.link:hover {
+  color: var(--color-primary-400);
+  text-decoration: none;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.bottom {
+  border-top: 1px solid var(--color-gray-700);
+  padding-top: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.copyright {
+  font-size: var(--text-sm);
+  color: var(--color-gray-400);
+}
+
+.built {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+}
+
+/* Tablet and desktop styles */
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-16);
+  }
+
+  .info {
+    text-align: left;
+  }
+
+  .links {
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+  }
+
+  .section {
+    text-align: left;
+  }
+
+  .linkList {
+    align-items: flex-start;
+  }
+
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .links {
+    grid-template-columns: 1fr 1fr;
+    grid-column: 2 / 4;
+  }
+}

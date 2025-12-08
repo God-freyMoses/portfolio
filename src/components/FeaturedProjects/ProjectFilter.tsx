@@ -118,6 +118,7 @@ export function ProjectFilter({
 
       <div
         id="filter-content"
+        data-testid="filter-content"
         className={`${styles.filterContent} ${isExpanded ? styles.expanded : ''}`}
       >
         {/* Category Filter */}

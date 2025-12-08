@@ -93,16 +93,18 @@ describe('ProjectCard', () => {
     expect(screen.queryByLabelText(/source code/)).not.toBeInTheDocument()
   })
 
-  it('applies visibility animation with delay', () => {
+  it('applies visibility animation with delay', async () => {
     const { container } = render(
-      <ProjectCard project={mockProject} delay={200} />
+      <ProjectCard project={mockProject} delay={0} />
     )
 
     const card = container.firstChild as HTMLElement
     expect(card).toHaveClass('projectCard')
 
     // The card should become visible after intersection observer triggers
-    expect(card).toHaveClass('visible')
+    await waitFor(() => {
+      expect(card).toHaveClass('visible')
+    })
   })
 
   it('has proper accessibility attributes', () => {

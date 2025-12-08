@@ -33,7 +33,7 @@ describe('ProjectFilter', () => {
     )
 
     const toggleButton = screen.getByText('Filter & Sort')
-    const filterContent = screen.getByRole('generic', { hidden: true })
+    const filterContent = screen.getByTestId('filter-content')
 
     // Initially collapsed
     expect(filterContent).not.toHaveClass('expanded')

@@ -1,0 +1,195 @@
+/* Project Navigation Component Styles */
+
+.projectNavigation {
+  padding: 4rem 0;
+  background: rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(10px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.navItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.navContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.navImage {
+  position: relative;
+  width: 80px;
+  height: 60px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.navItem:hover .image {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(168, 85, 247, 0.1) 100%
+  );
+}
+
+.navText {
+  flex: 1;
+}
+
+.navLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.navTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  line-height: 1.4;
+}
+
+.navArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 50%;
+  color: #3b82f6;
+  transition: all 0.3s ease;
+}
+
+.navItem:hover .navArrow {
+  background: rgba(59, 130, 246, 0.2);
+  transform: scale(1.1);
+}
+
+.viewAll {
+  display: flex;
+  justify-content: center;
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  text-decoration: none;
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.viewAllLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+}
+
+.viewAllIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .projectNavigation {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .navItem {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .navLabel {
+    color: var(--color-gray-400);
+  }
+
+  .navTitle {
+    color: var(--color-gray-100);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .navItem {
+    padding: 1.5rem;
+  }
+
+  .navImage {
+    width: 60px;
+    height: 45px;
+  }
+
+  .navTitle {
+    font-size: 1rem;
+  }
+
+  .navArrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navArrow svg {
+    width: 20px;
+    height: 20px;
+  }
+}

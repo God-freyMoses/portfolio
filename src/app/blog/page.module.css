@@ -1,0 +1,124 @@
+.blogPage {
+  min-height: 100vh;
+  padding: var(--space-8) 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.title {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-weight-bold);
+  color: white;
+  margin: 0 0 var(--space-4) 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+  font-size: var(--text-xl);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--leading-relaxed);
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+
+.noPosts {
+  text-align: center;
+  padding: var(--space-16);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-2xl);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.noPostsIcon {
+  font-size: var(--text-6xl);
+  margin-bottom: var(--space-4);
+  opacity: 0.8;
+}
+
+.noPostsTitle {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  color: white;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.noPostsText {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blogPage {
+    padding: var(--space-6) 0;
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .title {
+    font-size: var(--text-4xl);
+  }
+
+  .description {
+    font-size: var(--text-lg);
+  }
+
+  .postsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .header {
+    margin-bottom: var(--space-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: var(--text-3xl);
+  }
+
+  .description {
+    font-size: var(--text-base);
+  }
+
+  .noPosts {
+    padding: var(--space-8);
+  }
+
+  .noPostsIcon {
+    font-size: var(--text-4xl);
+  }
+
+  .noPostsTitle {
+    font-size: var(--text-xl);
+  }
+
+  .noPostsText {
+    font-size: var(--text-base);
+  }
+}

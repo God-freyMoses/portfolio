@@ -38,7 +38,8 @@
       "@/utils/*": ["./src/utils/*"],
       "@/app/*": ["./src/app/*"],
       "@/content/*": ["./content/*"],
-      "@/public/*": ["./public/*"]
+      "@/public/*": ["./public/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
   "include": [

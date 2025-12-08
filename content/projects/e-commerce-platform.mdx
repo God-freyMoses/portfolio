@@ -1,0 +1,48 @@
+---
+id: '1'
+title: 'E-Commerce Platform'
+description: 'A full-stack e-commerce solution built with Next.js, featuring real-time inventory management, secure payments, and an intuitive admin dashboard.'
+image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center'
+techStack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Stripe', 'Tailwind CSS']
+liveUrl: 'https://ecommerce-demo.example.com'
+githubUrl: 'https://github.com/username/ecommerce-platform'
+featured: true
+category: 'Full-Stack'
+complexity: 'advanced'
+date: '2024-01-15'
+role: 'Full-Stack Developer'
+timeline: '3 months'
+approach: 'Built a modern e-commerce platform using Next.js 14 with App Router, implementing secure payment processing with Stripe, real-time inventory management, and a comprehensive admin dashboard.'
+challenges:
+  - 'Implementing secure payment processing with PCI compliance'
+  - 'Building real-time inventory synchronization across multiple warehouses'
+  - 'Creating an intuitive admin dashboard for inventory management'
+solutions:
+  - 'Integrated Stripe Elements for secure payment processing'
+  - 'Implemented WebSocket connections for real-time inventory updates'
+  - 'Built a responsive admin dashboard with data visualization'
+outcomes:
+  - 'Processed $50K+ in transactions with 99.9% uptime'
+  - 'Reduced inventory discrepancies by 95%'
+  - 'Improved admin efficiency by 60%'
+architectureDiagram: 'graph TD
+  A[Next.js Frontend] --> B[API Routes]
+  B --> C[PostgreSQL Database]
+  B --> D[Stripe API]
+  B --> E[Redis Cache]
+  F[Admin Dashboard] --> B'
+codeSnippets: |
+  [
+    {
+      "title": "Payment Processing",
+      "language": "typescript",
+      "code": "export async function processPayment(amount: number, token: string) {\n  const paymentIntent = await stripe.paymentIntents.create({\n    amount: amount * 100,\n    currency: \"usd\",\n    payment_method: token,\n    confirm: true,\n  });\n\n  return paymentIntent;\n}",
+      "description": "Secure payment processing with Stripe"
+    }
+  ]
+gallery:
+  - 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop'
+  - 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop'
+videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+videoPlatform: youtube
+---

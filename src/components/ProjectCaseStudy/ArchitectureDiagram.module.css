@@ -1,0 +1,81 @@
+/* Architecture Diagram Component Styles */
+
+.diagramContainer {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.diagramContainer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  width: 100%;
+}
+
+.diagram svg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Mermaid error styling */
+.mermaid-error {
+  text-align: center;
+  color: var(--color-gray-600);
+  padding: 2rem;
+}
+
+.mermaid-error p {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.mermaid-error pre {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .diagramContainer {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .mermaid-error {
+    color: var(--color-gray-300);
+  }
+
+  .mermaid-error pre {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .diagramContainer {
+    padding: 1rem;
+  }
+
+  .diagram {
+    min-height: 250px;
+  }
+}

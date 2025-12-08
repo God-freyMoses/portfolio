@@ -1,0 +1,162 @@
+.previewContainer {
+  min-height: 100vh;
+  position: relative;
+}
+
+.previewBanner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.previewInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.previewLabel {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.previewType {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+}
+
+.exitPreviewButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.exitPreviewButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.previewContent {
+  padding-top: 80px; /* Account for fixed banner */
+}
+
+.previewFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: var(--space-3) var(--space-6);
+  text-align: center;
+  font-size: var(--text-sm);
+  z-index: 1000;
+}
+
+.previewFooter p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .previewBanner {
+    padding: var(--space-2) var(--space-4);
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: stretch;
+  }
+
+  .previewInfo {
+    text-align: center;
+  }
+
+  .exitPreviewButton {
+    align-self: center;
+    padding: var(--space-2) var(--space-6);
+  }
+
+  .previewContent {
+    padding-top: 120px; /* More space for mobile */
+  }
+
+  .previewFooter {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .previewBanner {
+    padding: var(--space-2);
+  }
+
+  .previewLabel {
+    font-size: var(--text-xs);
+  }
+
+  .previewType {
+    font-size: var(--text-sm);
+  }
+
+  .exitPreviewButton {
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-xs);
+  }
+
+  .previewContent {
+    padding-top: 100px;
+  }
+}
+
+/* Animation for banner appearance */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.previewBanner {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .previewBanner {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  }
+
+  .exitPreviewButton {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .exitPreviewButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .previewFooter {
+    background: rgba(0, 0, 0, 0.95);
+  }
+}

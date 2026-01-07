@@ -56,7 +56,7 @@ export function Footer() {
               <ul className={styles.linkList}>
                 <li>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/God-freyMoses"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.link}
@@ -66,7 +66,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/tshegofatso-godfrey-moses-5123b5269/?skipRedirect=true"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.link}
@@ -75,7 +75,10 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:contact@example.com" className={styles.link}>
+                  <a
+                    href="mailto:godfreymoses203@gmail.com"
+                    className={styles.link}
+                  >
                     Email
                   </a>
                 </li>

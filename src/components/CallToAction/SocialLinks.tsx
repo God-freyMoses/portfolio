@@ -13,7 +13,7 @@ interface SocialLink {
 const socialLinks: SocialLink[] = [
   {
     name: 'GitHub',
-    url: 'https://github.com/tshegofatso',
+    url: 'https://github.com/God-freyMoses',
     color: '#333',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -28,7 +28,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/tshegofatso-moses',
+    url: 'https://www.linkedin.com/in/tshegofatso-godfrey-moses-5123b5269/?skipRedirect=true',
     color: '#0077B5',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -54,7 +54,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     name: 'Email',
-    url: 'mailto:hello@tshegofatso.dev',
+    url: 'mailto:godfreymoses203@gmail.com',
     color: '#EA4335',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">

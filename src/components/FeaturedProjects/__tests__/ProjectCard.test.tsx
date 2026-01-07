@@ -14,7 +14,7 @@ const mockProject = {
   image: 'https://example.com/test-image.jpg',
   techStack: ['React', 'TypeScript', 'Jest'],
   liveUrl: 'https://example.com/live',
-  githubUrl: 'https://github.com/test/project',
+  githubUrl: 'https://github.com/God-freyMoses',
   featured: true,
   category: 'Frontend',
   complexity: 'intermediate' as const,
@@ -42,7 +42,7 @@ describe('ProjectCard', () => {
     expect(liveButton).toHaveAttribute('href', 'https://example.com/live')
     expect(sourceButton).toHaveAttribute(
       'href',
-      'https://github.com/test/project'
+      'https://github.com/God-freyMoses'
     )
     expect(liveButton).toHaveAttribute('target', '_blank')
     expect(sourceButton).toHaveAttribute('target', '_blank')

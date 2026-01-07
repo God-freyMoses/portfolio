@@ -141,10 +141,10 @@ export function CallToAction({
           <div className={styles.contactItem}>
             <span className={styles.contactLabel}>Email</span>
             <a
-              href="mailto:hello@tshegofatso.dev"
+              href="mailto:godfreymoses203@gmail.com"
               className={styles.contactLink}
             >
-              hello@tshegofatso.dev
+              godfreymoses203@gmail.com
             </a>
           </div>
           <div className={styles.contactItem}>
